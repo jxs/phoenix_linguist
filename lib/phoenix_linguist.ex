@@ -10,12 +10,12 @@ defmodule PhoenixLinguist do
   @doc """
   get the prefered locale based on the input locale, session and accept-language request header
 
-  return nil if there's none and :wrong if the url_locale doesn't exist
+  return nil if there's none and :wrong if the params_locale doesn't exist
   """
   def prefered_locale(conn) do
     cond do
-      url_locale(conn) ->
-        url_locale(conn)
+      params_locale(conn) ->
+        params_locale(conn)
       session_locale(conn) ->
         session_locale(conn)
       req_header_locale(conn) ->
@@ -29,7 +29,7 @@ defmodule PhoenixLinguist do
   check if given locale exists
 
   """
-  def url_locale(conn) do
+  def params_locale(conn) do
     locale = conn.params["locale"]
     cond do
       locale && locale in i18n(conn).locales ->

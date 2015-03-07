@@ -14,19 +14,19 @@ defmodule PhoenixLinguistTest do
     {:ok, conn: conn}
   end
 
-  test "url_locale returns :wrong if params locale doesn't exist", context do
+  test "params_locale returns :wrong if params locale doesn't exist", context do
     conn = %Plug.Conn{context.conn | params: %{"locale"=> "pt"}}
-    assert url_locale(conn) == :wrong
+    assert params_locale(conn) == :wrong
   end
 
-  test "url_locale returns :nil when params locale doesn't exist", context do
+  test "params_locale returns :nil when params locale doesn't exist", context do
     conn = %Plug.Conn{context.conn | params: %{}}
-    assert url_locale(conn) == nil
+    assert params_locale(conn) == nil
   end
 
-  test "url_locale returns locale when params locale exists", context do
+  test "params_locale returns locale when params locale exists", context do
     conn = %Plug.Conn{context.conn | params: %{"locale"=> "en"}}
-    assert url_locale(conn) == "en"
+    assert params_locale(conn) == "en"
   end
 
   test "default_locale returns first locale added", context do
@@ -49,7 +49,7 @@ defmodule PhoenixLinguistTest do
     assert req_header_locale(conn) == "en"
   end
 
-  test "prefered_locale returns url_locale first", context do
+  test "prefered_locale returns params_locale first", context do
     conn = %Plug.Conn{context.conn | params: %{"locale"=> "en"}}
     assert prefered_locale(conn) == "en"
   end
