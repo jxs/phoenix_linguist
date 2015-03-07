@@ -6,7 +6,7 @@ defmodule PhoenixLinguist.Helpers do
   import PhoenixLinguist, only: [prefered_locale: 1, default_locale: 1, i18n: 1]
 
   @doc """
-  translate given string with the apropriated locale
+  translate given string with the apropriated locale, raise exception if string doesnt exist
   """
   def t!(conn, string, bindings \\ []) do
     case prefered_locale(conn) do
@@ -17,6 +17,9 @@ defmodule PhoenixLinguist.Helpers do
     end
   end
 
+  @doc """
+  translate given string with the apropriated locale, return empty string if the translation string doesn't exist
+  """
   def t(conn, string, bindings \\ []) do
     case prefered_locale(conn) do
       nil ->
