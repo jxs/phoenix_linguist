@@ -34,7 +34,7 @@ defmodule PhoenixLinguist.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     # [{:phoenix, ">= 0.8.0"},
-    [{:phoenix, github: "phoenixframework/phoenix"},
+    [{:phoenix, ">= 0.10.0"},
      {:cowboy, "~> 1.0"},
      {:linguist, ">= 0.1.5"}
     ]
