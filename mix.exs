@@ -5,6 +5,9 @@ defmodule PhoenixLinguist.Mixfile do
     [app: :phoenix_linguist,
      version: "0.0.1",
      elixir: "~> 1.0",
+     description: description,
+     package: package,
+     docs: &docs/0,
      deps: deps]
   end
 
@@ -36,7 +39,30 @@ defmodule PhoenixLinguist.Mixfile do
     # [{:phoenix, ">= 0.8.0"},
     [{:phoenix, ">= 0.10.0"},
      {:cowboy, "~> 1.0"},
-     {:linguist, ">= 0.1.5"}
+     {:linguist, ">= 0.1.5"},
+     {:earmark, "~> 0.1", only: :docs},
+     {:ex_doc, "~> 0.7.1", only: :docs}
     ]
   end
+
+  defp description do
+    "A project that integrates Phoenix with Linguist, providing a plug and view helpers"
+  end
+
+  defp package do
+    [
+        files: ["lib", "mix.exs", "README*", "LICENSE*"],
+        contributors: ["Joao Oliveira"],
+        licenses: ["MIT"],
+        links: %{"GitHub" => "https://github.com/jxs/phoenix_linguist"}
+    ]
+  end
+
+  defp docs do
+    {ref, 0} = System.cmd("git", ["rev-parse", "--verify", "--quiet", "HEAD"])
+    [source_ref: ref,
+     main: "README",
+     readme: "README.md"]
+  end
+
 end
