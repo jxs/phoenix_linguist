@@ -5,6 +5,9 @@
 A project that integrates [Phoenix](http://github.com/phoenixframework/phoenix) with [Linguist](https://github.com/chrismccord/linguist), providing a plug and view helpers
 
 `PhoenixLinguistPlug` checks if there's a :locale param on the requested route, if there is and matches the existing locales, puts the locale on the session. If the requested :locale does not exist, forwards the user to the `ErrorView` `404` handler defined. If there isn't a :locale defined, `PhoenixLinguistPlug` puts the default locale on the session
+`PhoenixLinguist.Helpers` are a couple of view helpers that can be used on templates to help determine user's prefered locale
+
+You can see the [online documentation](http://hexdocs.pm/phoenix_linguist/) for more information.
 
 ##Requirements
 
@@ -50,3 +53,5 @@ If you need to use the helper functions, add `PhoenixLinguist.Helpers` to your w
   end
 
 ```
+
+Check the [online documentation](http://hexdocs.pm/phoenix_linguist/PhoenixLinguist.Helpers.html) for the list of helpers available

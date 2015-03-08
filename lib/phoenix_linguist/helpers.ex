@@ -37,7 +37,7 @@ defmodule PhoenixLinguist.Helpers do
 
 
   @doc """
-  return the apropriated locale, if nil return the default locale
+  call prefered_locale, if the result is nil, return the default locale
   """
   def l(conn) do
     case prefered_locale(conn) do
