@@ -17,13 +17,10 @@ Elixir 1.0.2
 
 ##Instructions
 
-Define your I18n Module on `config.ex` next to other Endpoint Settings
+Define your I18n Module on `config.ex`
 
 ```elixir
-config :my_app, MyApp.Endpoint,
-  url: [host: "localhost"],
-  secret_key_base: "l6M/YRIzkiqMk5Irn9UNm7ANo1BoHIF0XchxNmcUJWhdKZdERA45ASDFIxZ",
-  debug_errors: false,
+config :linguist, Linguist
   i18n: MyApp.I18n
 ```
 
