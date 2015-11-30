@@ -19,7 +19,7 @@ defmodule PhoenixLinguist.Mixfile do
   end
 
   defp applications(:test) do
-    [:phoenix] ++ applications(:prod)
+    [:phoenix, :phoenix_html] ++ applications(:prod)
   end
 
   defp applications(_) do
@@ -38,6 +38,7 @@ defmodule PhoenixLinguist.Mixfile do
   defp deps do
     # [{:phoenix, ">= 0.8.0"},
     [{:phoenix, ">= 0.10.0"},
+     {:phoenix_html, "~> 2.1"},
      {:cowboy, "~> 1.0"},
      {:linguist, ">= 0.1.5"},
      {:earmark, "~> 0.1", only: :docs},
