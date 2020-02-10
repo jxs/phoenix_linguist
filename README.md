@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/jxs/phoenix_linguist.svg?branch=master)](https://travis-ci.org/jxs/phoenix_linguist)
 
-#PhoenixLinguist
+# PhoenixLinguist
 
 A project that integrates [Phoenix](http://github.com/phoenixframework/phoenix) with [Linguist](https://github.com/chrismccord/linguist), providing a plug and view helpers
 
@@ -9,13 +9,13 @@ A project that integrates [Phoenix](http://github.com/phoenixframework/phoenix) 
 
 You can see the [online documentation](http://hexdocs.pm/phoenix_linguist/) for more information.
 
-##Requirements
+## Requirements
 
 Elixir 1.0.2
 
 [Phoenix](http://www.phoenixframework.org) 0.10.0
 
-##Instructions
+## Instructions
 
 Define your I18n Module on `config.ex` next to other Endpoint Settings
 
